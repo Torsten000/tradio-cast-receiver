@@ -31,14 +31,14 @@ html, body {
 }
 
 cast-media-player {
-    position: fixed;
-    top: -100px;
-    left: -100px;
-    width: 10px;
-    height: 10px;
-    opacity: 0.01;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
     pointer-events: none;
-    z-index: -9999;
+    opacity: 0.001;
+    --player-background-color: transparent;
 }
 
 .ambient-backdrop {

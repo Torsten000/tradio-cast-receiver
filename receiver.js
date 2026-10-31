@@ -273,6 +273,10 @@ playerManager.setMessageInterceptor(
     loadRequestData => {
         const media = loadRequestData.media;
         if (media) {
+            media.streamType = cast.framework.messages.StreamType.LIVE;
+            if (!media.contentType || media.contentType === 'application/octet-stream') {
+                media.contentType = 'audio/mpeg';
+            }
             const metadata = media.metadata;
             const title = metadata ? (metadata.title || metadata.songName) : '';
             const artist = metadata ? metadata.artist : '';

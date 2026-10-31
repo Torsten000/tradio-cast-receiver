@@ -337,10 +337,4 @@ context.addCustomMessageListener(CUSTOM_NAMESPACE, event => {
     } catch (_) {}
 });
 
-const playbackConfig = new cast.framework.PlaybackConfig();
-playbackConfig.autoResumeDuration = 5;
-
-context.start({
-    playbackConfig: playbackConfig,
-    disableIdleTimeout: true
-});
+context.start();
